@@ -1,3 +1,4 @@
+import useFecthCharacters from './hooks/useFecthCharacters';
 import './App.css';
 
 function App() {
