@@ -1,4 +1,6 @@
 import useFecthCharacters from './hooks/useFecthCharacters';
+import PokemonCharacter from './components/PokemonCharacter';
+import RickandMortyCharacter from './components/RickandMortyCharacter';
 import './App.css';
 
 function App() {
@@ -11,18 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1> */}
       
       <div className="card">
-        {/* Renderizar personaje de Pokémon */}
+        {/* Pokémon Character.Renderizar personaje de Pokémon */}
         <h2>Personaje Pokemon</h2>
         {pokemonLoading && <p>Cargando...</p>}
         {pokemonError && <p>Error: {pokemonError}</p>}
