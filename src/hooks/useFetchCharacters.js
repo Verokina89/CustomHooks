@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-const useFecthCharacters = (url) => {
+const useFetchCharacters = (url) => {
   const [data, setData] = useState(null); //almacena datos de la API
-  const [loading, setLoading] = useState(true); //manejar la carga de datos
+  const [loading, setLoading] = useState(true); //maneja carga de datos
   const [error, setError] = useState(null); //manejo de  errores
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const useFecthCharacters = (url) => {
       try {
         const response = await fetch(url); //hace la solicitud a la API
         if (!response.ok) {
-          throw new Error('Error en la solicitud'); //controla o maneja errores de respuesta
+          throw new Error('Error fetching data'); //controla o maneja errores de respuesta
         }
         const result = await response.json(); //pasa response a JSON
         setData(result); //guarda los datos
@@ -25,7 +25,11 @@ const useFecthCharacters = (url) => {
     fetchData();
   }, [url]); //ejecuta nuevamente si se cambia la URL
 
-  return { data, loading, error }; //retorna todos los datos(carga y error)
+    return { 
+        data, 
+        loading, 
+        error 
+    }; //retorna todos los datos(carga y error)
 };
 
-export default useFecthCharacters;
+export default useFetchCharacters;
